@@ -1,5 +1,9 @@
 # 🐕 The Underdog
 
+<p align="center">
+  <img src="./underdog.png">
+</p>
+
 A local agent that hunts for AI-powered game development tools and news.
 It scouts GitHub, Reddit, and Hacker News, evaluates candidates for
 novelty / gamedev-relevance / credibility, and produces a ranked
