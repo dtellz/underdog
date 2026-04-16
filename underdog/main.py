@@ -11,6 +11,7 @@ from rich.panel import Panel
 
 from .agent import build_graph, initial_state
 from .log import console
+from .writer import write_run
 
 
 def main() -> int:
@@ -34,19 +35,39 @@ def main() -> int:
         "5 tool-call rounds regardless; this is just a safety net.",
     )
     parser.add_argument(
-        "--save",
+        "--data-dir",
+        type=Path,
+        default=Path("docs/data"),
+        help="Where to write run JSON + index (consumed by the docs/ site).",
+    )
+    parser.add_argument(
+        "--run-id",
+        type=str,
+        default=None,
+        help="Override the run id (default: today's UTC date, YYYY-MM-DD).",
+    )
+    parser.add_argument(
+        "--no-persist",
+        action="store_true",
+        help="Skip writing JSON. Useful for dry runs.",
+    )
+    parser.add_argument(
+        "--save-markdown",
         type=Path,
         default=None,
-        help="Optional path to write the final markdown report to.",
+        help="Optional path to ALSO write the final markdown report to.",
     )
     args = parser.parse_args()
+
+    model = os.getenv("LLAMA_MODEL", "qwen3.6-35b-a3b")
+    server = os.getenv("LLAMA_SERVER_URL", "http://localhost:8080/v1")
 
     console.print(
         Panel.fit(
             f"[bold magenta]The Underdog[/]\n"
             f"[cyan]topic:[/] {args.topic}\n"
-            f"[cyan]model:[/] {os.getenv('LLAMA_MODEL', 'qwen3.6-35b-a3b')}\n"
-            f"[cyan]server:[/] {os.getenv('LLAMA_SERVER_URL', 'http://localhost:8080/v1')}",
+            f"[cyan]model:[/] {model}\n"
+            f"[cyan]server:[/] {server}",
             border_style="magenta",
         )
     )
@@ -65,10 +86,22 @@ def main() -> int:
     console.rule("[bold green]Report[/]")
     console.print(Markdown(report_md))
 
-    if args.save:
-        args.save.parent.mkdir(parents=True, exist_ok=True)
-        args.save.write_text(report_md, encoding="utf-8")
-        console.print(f"\n[green]Saved report to[/] {args.save}")
+    if not args.no_persist:
+        run_path, index_path = write_run(
+            state=result,
+            model=model,
+            data_dir=args.data_dir,
+            run_id=args.run_id,
+        )
+        console.print(
+            f"\n[green]Wrote[/] {run_path}\n"
+            f"[green]Updated[/] {index_path}"
+        )
+
+    if args.save_markdown:
+        args.save_markdown.parent.mkdir(parents=True, exist_ok=True)
+        args.save_markdown.write_text(report_md, encoding="utf-8")
+        console.print(f"[green]Saved markdown to[/] {args.save_markdown}")
 
     return 0
 
