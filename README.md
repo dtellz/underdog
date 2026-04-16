@@ -102,7 +102,7 @@ LLAMA_MODEL=qwen3.6-35b-a3b
 ## Usage
 
 ```bash
-# default: writes docs/data/runs/YYYY-MM-DD.json and updates docs/data/index.json
+# default: writes docs/data/runs/YYYY-MM-DD_HH-MM.json and updates docs/data/index.json
 underdog "procedural level generation with LLMs"
 
 # override where the data lives
@@ -143,7 +143,7 @@ docs/
 └── data/
     ├── index.json     # list of runs (rewritten by every run)
     └── runs/
-        └── YYYY-MM-DD.json
+        └── YYYY-MM-DD_HH-MM.json
 ```
 
 ### Enable GitHub Pages

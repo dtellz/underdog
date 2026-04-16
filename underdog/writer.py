@@ -27,7 +27,9 @@ def _now_iso() -> str:
 
 
 def _default_run_id() -> str:
-    return datetime.now(timezone.utc).strftime("%Y-%m-%d")
+    # Minute precision so multiple runs in the same day (different topics)
+    # don't overwrite each other, while still sorting chronologically.
+    return datetime.now(timezone.utc).strftime("%Y-%m-%d_%H-%M")
 
 
 def _source_breakdown(findings: list[dict[str, Any]]) -> dict[str, int]:

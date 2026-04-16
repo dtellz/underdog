@@ -44,7 +44,7 @@ def main() -> int:
         "--run-id",
         type=str,
         default=None,
-        help="Override the run id (default: today's UTC date, YYYY-MM-DD).",
+        help="Override the run id (default: UTC timestamp, YYYY-MM-DD_HH-MM).",
     )
     parser.add_argument(
         "--no-persist",
