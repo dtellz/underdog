@@ -1,0 +1,32 @@
+{
+  "id": "2026-04-16",
+  "topic": "procedural level generation with LLMs",
+  "model": "qwen3.6-35b-a3b",
+  "generated_at": "2026-04-16T19:37:58+00:00",
+  "stats": {
+    "scouted": 22,
+    "kept": 1,
+    "sources": {
+      "github": 1,
+      "reddit/gamedev": 15,
+      "reddit/proceduralgeneration": 6
+    }
+  },
+  "findings": [
+    {
+      "rank": 1,
+      "title": "Moving beyond random tables: Using specialized LLM pipelines to generate structured, stateful game worlds.",
+      "url": "https://www.reddit.com/r/proceduralgeneration/comments/1s4fqin/moving_beyond_random_tables_using_specialized_llm/",
+      "source": "reddit/proceduralgeneration",
+      "score": 7,
+      "verdict": "keep",
+      "reasoning": "Highly relevant and novel approach to bridging classic procedural tables with structured LLM pipelines for stateful game worlds.",
+      "description": "Hey everyone,\n\n\n\nI've been working on a project that tries to bridge the gap between classic procedural generation (like random roll tables for towns and factions) and modern LLM generation. \n\n\n\nThe problem with just using an LLM to generate a world is that it usually spits out a massive wall of text that is completely unusable for actual hard game logic. To fix this, I built a system called Altworld (altworld.io). It is an \"AI-assisted life simulation game built on a structured simulation core,",
+      "signal": {
+        "score": 0,
+        "comments": 15,
+        "created": 1774549844.0
+      }
+    }
+  ]
+}
