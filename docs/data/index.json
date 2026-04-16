@@ -1,13 +1,13 @@
 {
-  "updated_at": "2026-04-16T19:37:58+00:00",
+  "updated_at": "2026-04-16T19:50:03+00:00",
   "runs": [
     {
       "id": "2026-04-16",
-      "topic": "procedural level generation with LLMs",
-      "generated_at": "2026-04-16T19:37:58+00:00",
-      "kept": 1,
-      "scouted": 22,
-      "top_score": 7,
+      "topic": "3d game world generation",
+      "generated_at": "2026-04-16T19:50:03+00:00",
+      "kept": 6,
+      "scouted": 29,
+      "top_score": 8,
       "file": "runs/2026-04-16.json"
     }
   ]

@@ -1,31 +1,129 @@
 {
   "id": "2026-04-16",
-  "topic": "procedural level generation with LLMs",
+  "topic": "3d game world generation",
   "model": "qwen3.6-35b-a3b",
-  "generated_at": "2026-04-16T19:37:58+00:00",
+  "generated_at": "2026-04-16T19:50:03+00:00",
   "stats": {
-    "scouted": 22,
-    "kept": 1,
+    "scouted": 29,
+    "kept": 6,
     "sources": {
-      "github": 1,
-      "reddit/gamedev": 15,
-      "reddit/proceduralgeneration": 6
+      "github": 10,
+      "reddit/IndieDev": 15,
+      "hackernews": 4
     }
   },
   "findings": [
     {
       "rank": 1,
-      "title": "Moving beyond random tables: Using specialized LLM pipelines to generate structured, stateful game worlds.",
-      "url": "https://www.reddit.com/r/proceduralgeneration/comments/1s4fqin/moving_beyond_random_tables_using_specialized_llm/",
-      "source": "reddit/proceduralgeneration",
+      "title": "Tencent-Hunyuan/HunyuanWorld-Voyager",
+      "url": "https://github.com/Tencent-Hunyuan/HunyuanWorld-Voyager",
+      "source": "github",
+      "score": 8,
+      "verdict": "keep",
+      "reasoning": "Strong academic-industrial backing with real-time 3D reconstruction capabilities directly applicable to procedural world building and asset pipeline automation.",
+      "description": "Voyager is an interactive RGBD video generation model conditioned on camera input, and supports real-time 3D reconstruction.",
+      "signal": {
+        "stars": 1538,
+        "updated": "2026-04-15T17:30:08Z",
+        "topics": [
+          "3d",
+          "3d-generation",
+          "aigc",
+          "hunyuan3d",
+          "image-to-3d",
+          "image-to-video",
+          "scene-generation",
+          "world-model",
+          "world-models"
+        ]
+      }
+    },
+    {
+      "rank": 2,
+      "title": "imlixinyang/FlashWorld",
+      "url": "https://github.com/imlixinyang/FlashWorld",
+      "source": "github",
       "score": 7,
       "verdict": "keep",
-      "reasoning": "Highly relevant and novel approach to bridging classic procedural tables with structured LLM pipelines for stateful game worlds.",
-      "description": "Hey everyone,\n\n\n\nI've been working on a project that tries to bridge the gap between classic procedural generation (like random roll tables for towns and factions) and modern LLM generation. \n\n\n\nThe problem with just using an LLM to generate a world is that it usually spits out a massive wall of text that is completely unusable for actual hard game logic. To fix this, I built a system called Altworld (altworld.io). It is an \"AI-assisted life simulation game built on a structured simulation core,",
+      "reasoning": "ICLR oral paper demonstrating rapid 3D scene generation, offering high potential for accelerating level design workflows despite moderate current adoption.",
+      "description": "Code for \"FlashWorld: High-quality 3D Scene Generation within Seconds\" (ICLR 2026 Oral)",
       "signal": {
-        "score": 0,
-        "comments": 15,
-        "created": 1774549844.0
+        "stars": 755,
+        "updated": "2026-03-24T09:28:36Z",
+        "topics": []
+      }
+    },
+    {
+      "rank": 3,
+      "title": "FuchengSu/WorldStereo",
+      "url": "https://github.com/FuchengSu/WorldStereo",
+      "source": "github",
+      "score": 6,
+      "verdict": "keep",
+      "reasoning": "Promising CVPR research on 3D geometric memory for scene reconstruction, though currently niche and primarily academic rather than a plug-and-play game tool.",
+      "description": "[CVPR 2026] WorldStereo: Bridging Camera-Guided Video Generation and Scene Reconstruction via 3D Geometric Memories (WorldExpand of HY-World 2.0)",
+      "signal": {
+        "stars": 114,
+        "updated": "2026-04-16T05:45:10Z",
+        "topics": [
+          "3d-reconstruction",
+          "videogeneration"
+        ]
+      }
+    },
+    {
+      "rank": 4,
+      "title": "HFrajacomo/Draconic-Revolution",
+      "url": "https://github.com/HFrajacomo/Draconic-Revolution",
+      "source": "github",
+      "score": 6,
+      "verdict": "keep",
+      "reasoning": "Practical Unity-based voxel RPG with procedural generation that serves as a solid reference implementation and template for indie developers.",
+      "description": "A 3D Voxel-Based RPG with procedural world generation made with Unity",
+      "signal": {
+        "stars": 30,
+        "updated": "2026-04-14T05:36:24Z",
+        "topics": []
+      }
+    },
+    {
+      "rank": 5,
+      "title": "tomicz/one-shot-prompt-world-generation-unity",
+      "url": "https://github.com/tomicz/one-shot-prompt-world-generation-unity",
+      "source": "github",
+      "score": 6,
+      "verdict": "keep",
+      "reasoning": "Highly relevant LLM-driven Unity world generator that could streamline level design, though currently experimental with low star count.",
+      "description": "One prompt. An LLM agent builds a complete procedural 3D landscape inside the Unity Editor. Terrain, splat maps, water, props, lighting, clouds, and a horizon ring \u2014 all from a single message.",
+      "signal": {
+        "stars": 5,
+        "updated": "2026-04-16T05:41:49Z",
+        "topics": [
+          "ai",
+          "benchmark",
+          "cursor",
+          "gpt",
+          "llm",
+          "mythos",
+          "opus",
+          "prompt",
+          "unity"
+        ]
+      }
+    },
+    {
+      "rank": 6,
+      "title": "Show HN: Seele AI \u2013 Generate playable games from text prompts using MLLM",
+      "url": "https://www.seeles.ai/game",
+      "source": "hackernews",
+      "score": 6,
+      "verdict": "keep",
+      "reasoning": "Promising MLLM-focused engine for text-to-playable-game generation, though early-stage and unproven at scale.",
+      "description": "I&#x27;m a co-founder of Seele AI. We are building a generative engine designed specifically for game development.<p>Unlike typical code-generation tools that rely on general-purpose LLMs, we have developed our own Multimodal LLM (MLLM) optimized for gaming. It doesn&#x27;t just output text&#x2F;code; it natively handles 3D models, spatial coordinates, and visual information to construct the game world.<p>Key Features:<p>Engine Support: We currently support real-time generation for Three.js and",
+      "signal": {
+        "points": 2,
+        "comments": 3,
+        "created": "2026-02-05T08:53:15Z"
       }
     }
   ]
