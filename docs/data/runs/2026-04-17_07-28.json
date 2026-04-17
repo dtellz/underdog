@@ -1,0 +1,17 @@
+{
+  "id": "2026-04-17_07-28",
+  "topic": "localization tools",
+  "model": "qwen3.6-35b-a3b",
+  "generated_at": "2026-04-17T07:28:48+00:00",
+  "stats": {
+    "scouted": 22,
+    "kept": 0,
+    "sources": {
+      "github": 1,
+      "reddit/gamedev": 10,
+      "reddit/IndieDev": 10,
+      "hackernews": 1
+    }
+  },
+  "findings": []
+}
